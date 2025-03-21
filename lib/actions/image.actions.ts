@@ -9,7 +9,6 @@ import { redirect } from "next/navigation";
 
 import { v2 as cloudinary } from 'cloudinary'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const populateUser = (query: any) => query.populate({
   path: 'author',
   model: User,
@@ -119,7 +118,6 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
       .expression(expression)
       .execute();
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const resourceIds = resources.map((resource: any) => resource.public_id);
 
     let query = {};
